@@ -3,213 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Love Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <title>Attractive Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-image: linear-gradient(to bottom, #FF6B81, #FF8E53);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-        .form-container {
-            background-color: rgba(255, 255, 255, 0.9); 
-            padding: 2rem;
-            border-radius: 12px; 
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-            width: 100%;
-            max-width: 450px; 
-            text-align: center;
-        }
-        .form-container h2 {
-            color: #FF4081; 
-            margin-bottom: 1.5rem;
-            font-size: 2rem; 
-            font-weight: bold;
-        }
-        .mb-4 label {
-            display: block;
-            color: #333;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            text-align: left;
-        }
-        .mb-4 input[type="text"] {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #FF80AB; 
-            border-radius: 6px;
-            font-size: 1rem;
-            color: #555;
-            box-sizing: border-box;
-            margin-bottom: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .mb-4 input[type="text"]:focus {
-            border-color: #FF4081;
-            outline: none;
-            box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
-        }
-        .submit-button {
-            background-color: #FF4081; 
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem; 
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
-            width: 100%;
-            margin-top: 0.5rem;
-        }
-        .submit-button:hover {
-            background-color: #FF1744; 
-            transform: scale(1.05); 
-            box-shadow: 0 6px 12px rgba(255, 64, 129, 0.3); 
-        }
-        .submit-button:active {
-            transform: scale(1);
-            box-shadow: 0 2px 4px rgba(255, 64, 129, 0.3);
-        }
-        .result-message {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #FFE0E5; 
-            color: #FF4081;
-            border-radius: 6px;
-            border: 2px solid #FF80AB; 
-            text-align: center;
-            font-size: 1.2rem; 
-            font-weight: bold;
-            display: none;
-        }
-        .result-message a {
-            color: #FF4081;
-            text-decoration: underline;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #22568a; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff; /* White container */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100%;
+    max-width: 600px; /* Increased max-width for larger screens */
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.form-title {
+    color: #2c3e50; /* Dark title */
+    margin-bottom: 30px;
+    font-size: 2.2rem; /* Larger title */
+    font-weight: 600;
+}
+
+.form-description {
+    color: #667885; /* Gray description */
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e; /* Dark label */
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.form-group:focus-within .form-label {
+    color: #4299e1; /* Highlight label on focus */
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.form-input {
+    width: calc(100% - 40px); /* Leave space for icon */
+    padding: 12px 20px 12px 45px; /* Padding with space for icon */
+    border: 2px solid #e2e8f0; /* Light border */
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    background-color: #ffffff; /* White input background */
+    color: #2c3e50;
+}
+
+.form-input:focus {
+    border-color: #4299e1; /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15); /* Add focus shadow */
+}
+
+.form-input::placeholder {
+    color: #a0aec0; /* Light placeholder color */
+    font-size: 1.1rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0; /* Light icon color */
+    transition: color 0.3s ease;
+    width: 20px; /* Fixed width for SVG icons */
+    height: 20px;
+}
+
+.form-group:focus-within .input-icon {
+    color: #4299e1; /* Highlight icon on focus */
+}
+
+
+textarea.form-input {
+    resize: vertical;
+    height: 150px;
+}
+
+.form-error-message {
+    color: #e53e3e;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-error-message.visible {
+    opacity: 1;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form-checkbox {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    appearance: none;
+    background-color: #fff;
+    position: relative;
+}
+
+.form-checkbox:checked {
+    border-color: #4299e1;
+    background-color: #4299e1;
+}
+
+.form-checkbox:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 12px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+
+.checkbox-label {
+    color: #4a5568;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.form-button {
+    background-color: #4299e1;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+}
+
+.form-button:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-button:active {
+    background-color: #2d68b3;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.response {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.response.show {
+    opacity: 1;
+    max-height: 500px;
+}
+
+
+.response.success {
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #6ee7b7;
+}
+
+.response.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    .form-title {
+        font-size: 2rem;
+    }
+
+    .form-description {
+        font-size: 1rem;
+    }
+
+    .form-input {
+        font-size: 1rem;
+        padding: 12px 16px 12px 40px;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .form-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+}
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Valentine's Day Special</h2>
-        <form id="loveCalculatorForm">
-            <div class="mb-4">
-                <label for="yourName">Your Name:</label>
-                <input type="text" id="yourName" name="yourName" placeholder="Enter Your Name" required>
+    <div class="container">
+        <h1 class="form-title">Get in Touch</h1>
+        <p class="form-description">Please fill out the form below to contact us.</p>
+        <form id="contactForm" class="form">
+            <div class="form-group">
+                <label for="name" class="form-label">Name:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user input-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <p id="name-error" class="form-error-message"></p>
             </div>
-            <div class="mb-4">
-                <label for="partnerName">Your Partner's Name:</label>
-                <input type="text" id="partnerName" name="partnerName" placeholder="Enter Your Partner's Name" required>
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail input-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22 6 12 13 2 6"></polyline></svg>
+                </div>
+                <p id="email-error" class="form-error-message"></p>
             </div>
-            <button type="submit" class="submit-button">Calculate Love</button>
+            <div class="form-group">
+                <label for="message" class="form-label">Message:</label>
+                <div class="input-wrapper">
+                    <textarea id="message" name="message" rows="5" class="form-input textarea" placeholder="Your Message" required></textarea>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square input-icon"><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"></path><polyline points="14 9 9 14 6 11"></polyline></svg>
+                </div>
+                <p id="message-error" class="form-error-message"></p>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="subscribe" name="subscribe" class="form-checkbox">
+                    <label for="subscribe" class="form-label checkbox-label">Subscribe to our newsletter</label>
+                </div>
+            </div>
+            <button type="submit" class="form-button">Send Message</button>
+            <div id="response" class="response"></div>
         </form>
-        <div id="resultMessage" class="result-message">
-            <p>Your Love Percentage is: <span id="lovePercentage"></span>%</p>
-            <p id="loveMessage"></p>
-        </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('loveCalculatorForm');
-            const resultMessage = document.getElementById('resultMessage');
-            const lovePercentageDisplay = document.getElementById('lovePercentage');
-            const loveMessageDisplay = document.getElementById('loveMessage');
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
+    const responseDiv = document.getElementById('response');
 
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-
-                const yourName = document.getElementById('yourName').value.trim();
-                const partnerName = document.getElementById('partnerName').value.trim();
-
-                if (yourName === "" || partnerName === "") {
-                    alert("Please enter both names!");
-                    return;
-                }
-
-                const lovePercentage = calculateLovePercentage(yourName, partnerName);
-                lovePercentageDisplay.textContent = lovePercentage;
-
-                let message = "";
-                if (lovePercentage >= 80) {
-                    message = "You two are a perfect match! ❤️";
-                } else if (lovePercentage >= 60) {
-                    message = "Great connection! 💕";
-                } else if (lovePercentage >= 40) {
-                    message = "Good start! Keep working on it. 😊";
-                } else {
-                    message = "There's room for improvement. Don't give up! 😉";
-                }
-                loveMessageDisplay.textContent = message;
-                resultMessage.style.display = 'block';
-                console.log("Your Name:", yourName);
-                console.log("Partner's Name:", partnerName);
-                console.log("Love Percentage:", lovePercentage);
-
-            
-            });
-
-            function calculateLovePercentage(name1, name2) {
-                const combinedNames = (name1 + name2).toLowerCase();
-                let sum = 0;
-                for (let i = 0; i < combinedNames.length; i++) {
-                    sum += combinedNames.charCodeAt(i);
-                }
-                const percentage = sum % 101; 
-                return percentage;
-            }
-        });
-        const express = require('express');
-const { Pool } = require('pg'); // For PostgreSQL
-const app = express();
-const port = 3000;
-
-app.use(express.urlencoded({ extended: true })); // To parse form data
-app.use(express.json()); // To parse JSON data
-
-// Database connection (PostgreSQL example)
-const pool = new Pool({
-    user: 'your_user',
-    host: 'your_host',
-    database: 'your_database',
-    password: 'your_password',
-    port: 5432,
-});
-
-app.post('/submit-love-data', (req, res) => {
-    const { yourName, partnerName, lovePercentage } = req.body;
-
-    pool.query(
-        'INSERT INTO love_data (your_name, partner_name, love_percentage) VALUES ($1, $2, $3)',
-        [yourName, partnerName, lovePercentage],
-        (err, result) => {
-            if (err) {
-                console.error('Error inserting data:', err);
-                res.status(500).send('Error saving data');
-            } else {
-                console.log('Data saved successfully');
-                res.status(200).send('Data saved successfully');
-            }
+    function validateName() {
+        if (nameInput.value.trim() === '') {
+            nameError.textContent = 'Name is required';
+            nameError.classList.add('visible');
+            return false;
+        } else if (nameInput.value.trim().length < 2) {
+            nameError.textContent = 'Name must be at least 2 characters';
+            nameError.classList.add('visible');
+            return false;
+        } else {
+            nameError.textContent = '';
+            nameError.classList.remove('visible');
+            return true;
         }
-    );
-});
+    }
 
-app.get('/get-love-data', async (req, res) => {
-   try {
-       const result = await pool.query('SELECT * FROM love_data');
-       res.json(result.rows);
-   } catch (error) {
-       console.error("Error fetching data", error);
-       res.status(500).send("Error fetching data");
-   }
-});
+    function validateEmail() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailInput.value.trim() === '') {
+            emailError.textContent = 'Email is required';
+            emailError.classList.add('visible');
+            return false;
+        } else if (!emailRegex.test(emailInput.value.trim())) {
+            emailError.textContent = 'Invalid email format';
+            emailError.classList.add('visible');
+            return false;
+        } else {
+            emailError.textContent = '';
+            emailError.classList.remove('visible');
+            return true;
+        }
+    }
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    function validateMessage() {
+        if (messageInput.value.trim() === '') {
+            messageError.textContent = 'Message is required';
+            messageError.classList.add('visible');
+            return false;
+        } else if (messageInput.value.trim().length < 10) {
+            messageError.textContent = 'Message must be at least 10 characters';
+            messageError.classList.add('visible');
+            return false;
+        } else {
+            messageError.textContent = '';
+            messageError.classList.remove('visible');
+            return true;
+        }
+    }
+
+    nameInput.addEventListener('input', validateName);
+    emailInput.addEventListener('input', validateEmail);
+    messageInput.addEventListener('input', validateMessage);
+
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isMessageValid = validateMessage();
+
+        if (isNameValid && isEmailValid && isMessageValid) {
+            // Simulate form submission
+            responseDiv.textContent = 'Thank you for your message! We will get back to you shortly.';
+            responseDiv.className = 'response success show';
+            form.reset();
+             setTimeout(() => {
+                responseDiv.className = 'response';
+                responseDiv.textContent = '';
+            }, 5000);
+
+        } else {
+            responseDiv.textContent = 'Please fix the errors in the form.';
+            responseDiv.className = 'response error show';
+        }
+    });
 });
     </script>
 </body>
